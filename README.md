@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AEGIS
 
-## Getting Started
+**AI 트레이딩 에이전트를 노코드로 만들고 배포하는 플랫폼**
 
-First, run the development server:
+TEE(Trusted Execution Environment)로 전략 프라이버시를 보장하며, BNB Chain 위에서 동작합니다.
+
+> BuidlHack 2026 해커톤 출품작
+
+## 핵심 기능
+
+- **No-Code Builder** — 드래그앤드롭으로 퀀트 트레이딩 전략을 생성. 지표(RSI, MACD, Bollinger 등), 조건, 실행 노드를 연결하여 전략을 구성합니다.
+- **TEE 보안** — 전략, API 키, 거래 데이터가 Trusted Execution Environment 내에서 암호화. 플랫폼 운영자도 확인 불가.
+- **Marketplace** — 배포된 에이전트들의 성과(ROI, 승률 등)를 랭킹으로 탐색. 전략 자체는 비공개.
+- **Arena** — 토너먼트에 입장료를 내고 참가, 승자가 상금 독식.
+
+## 기술 스택
+
+| 분류 | 기술 |
+|------|------|
+| 프레임워크 | Next.js 16 (App Router) + TypeScript |
+| 스타일링 | Tailwind CSS + shadcn/ui |
+| 애니메이션 | Framer Motion |
+| 노드 에디터 | @xyflow/react (React Flow) |
+| 블록체인 | BNB Chain (BSC / opBNB) |
+| TEE | NEAR AI Cloud (OpenAI SDK 호환) |
+| 배포 | Vercel |
+
+## 실행 방법
 
 ```bash
+# 의존성 설치
+npm install
+
+# 개발 서버 실행
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# 프로덕션 빌드
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`http://localhost:3000`에서 확인 가능합니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 페이지 구성
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| 경로 | 페이지 | 설명 |
+|------|--------|------|
+| `/` | Landing | 플랫폼 소개 + CTA |
+| `/builder` | Builder | 드래그앤드롭 전략 빌더 (핵심) |
+| `/dashboard` | Dashboard | 내 에이전트 관리 + 수익률 모니터링 |
+| `/marketplace` | Marketplace | 에이전트 랭킹 + 성과 탐색 |
+| `/arena` | Arena | 토너먼트 경쟁 |
 
-## Learn More
+## 타겟 해커톤 트랙
 
-To learn more about Next.js, take a look at the following resources:
+- **BNB Chain** ($5,000) — 트레이딩 자동화 에이전트 + 에이전트 UX
+- **Near AI** ($5,000) — TEE 기반 프라이빗 AI
+- **General** ($6,000) — 자동 등록
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 라이브 데모
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+https://aegis-eosin-iota.vercel.app
 
-## Deploy on Vercel
+## 라이선스
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
